@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 18:32:16 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/02 20:23:53 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/12/03 21:09:20 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,16 @@ int main(int argc, char *argv[])
 	i = 1;
 	while (i < argc)
 	{
-		printf("i: %s\n", argv[i]);
+		push(&a, atoi(argv[i]));
 		i++;
+	}
+
+	t_frame *x = a->head;
+
+	while (x && x->next)
+	{
+		printf("x: %d\n", x->data);
+		x = x->next;
 	}
 
 	exit(EXIT_SUCCESS);

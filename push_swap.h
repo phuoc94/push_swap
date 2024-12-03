@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 16:47:12 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/02 20:09:56 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/12/03 18:56:17 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ typedef struct s_stack
 
 
 t_stack *initialize_stack(t_stack **stack);
-
+int pop(t_stack **stack);
+t_stack *push(t_stack **stack, int data);
 
 #endif

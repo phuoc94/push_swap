@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 19:53:04 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/02 21:21:51 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/12/03 18:57:28 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,20 @@
 
 
 
-t_stack *pop(t_stack **stack)
+int pop(t_stack **stack)
 {
+	int r;
+	t_frame *tmp;
 	if((*stack)->head == NULL)
-		return (NULL);
+		return (-1);
 
-
+	r = (*stack)->head->data;
+	tmp = (*stack)->head;
+	(*stack)->head = (*stack)->head->next;
+	(*stack)->size--;
+	free(tmp);
+	return (r);
 }
-
-
-
 
 t_stack *push(t_stack **stack, int data)
 {
