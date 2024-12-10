@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 19:53:04 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/03 18:57:28 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/12/10 20:03:10 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ int pop(t_stack **stack)
 {
 	int r;
 	t_frame *tmp;
-	if((*stack)->head == NULL)
+	if((*stack)->top == NULL)
 		return (-1);
 
-	r = (*stack)->head->data;
-	tmp = (*stack)->head;
-	(*stack)->head = (*stack)->head->next;
+	r = (*stack)->top->data;
+	tmp = (*stack)->top;
+	(*stack)->top = (*stack)->top->next;
 	(*stack)->size--;
 	free(tmp);
 	return (r);
@@ -38,8 +38,8 @@ t_stack *push(t_stack **stack, int data)
 		return (NULL);
 
 	frame->data = data;
-	frame->next = (*stack)->head;
-	(*stack)->head = frame;
+	frame->next = (*stack)->top;
+	(*stack)->top = frame;
 	(*stack)->size++;
 
 	return (*stack);
@@ -51,7 +51,7 @@ t_stack *initialize_stack(t_stack **stack)
 	if(!(*stack))
 		return (NULL);
 
-	(*stack)->head = NULL;
+	(*stack)->top = NULL;
 	(*stack)->size = 0;
 
 	return (*stack);
