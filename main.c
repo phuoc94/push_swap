@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 18:32:16 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/10 23:03:09 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/12/11 20:36:19 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,13 @@ int main(void)
 	argv[2] = "1";
 	argv[3] = "3";
 	argv[4] = "4";
+
+
+	argv[1] = "2";
+	argv[2] = "1";
+	argv[3] = "3";
+	argv[4] = "4";
+
 
 	t_stack *a;
 	t_stack *b;
@@ -51,29 +58,54 @@ int main(void)
 	x = a->top;
 	y = b->top;
 
-	ft_push_to(&b, &a);
-	ft_push_to(&b, &a);
-	ft_swap_both(&a ,&b);
-	ft_swap_both(&a ,&b);
-
-	while (x && y)
+	while (x || y)
 	{
-		printf("a: %d, b: %d \n", x->data, y->data);
-		x = x->next;
-		y = y->next;
+		if(x && y)
+		{
+			printf("a: %d, b: %d \n", x->data, y->data);
+			x = x->next;
+			y = y->next;
+		} else if(x)
+		{
+			printf("a: %d, b: \n", x->data);
+			x = x->next;
+		} else if(y)
+		{
+			printf("a:  , b: %d\n", y->data);
+			y = y->next;
+		}
+		else
+		{
+			break;
+		}
 	}
 
 	printf("------------------------\n");
-	ft_swap(&a);
+	ft_shift_down(a);
 
 	x = a->top;
 	y = b->top;
 
-	while (x && y)
+	while (x || y)
 	{
-		printf("a: %d, b: %d \n", x->data, y->data);
-		x = x->next;
-		y = y->next;
+		if(x && y)
+		{
+			printf("a: %d, b: %d \n", x->data, y->data);
+			x = x->next;
+			y = y->next;
+		} else if(x)
+		{
+			printf("a: %d, b: \n", x->data);
+			x = x->next;
+		} else if(y)
+		{
+			printf("a:  , b: %d\n", y->data);
+			y = y->next;
+		}
+		else
+		{
+			break;
+		}
 	}
 
 	exit(EXIT_SUCCESS);

@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 19:53:04 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/10 20:03:10 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/12/11 19:43:59 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,4 @@ t_stack *initialize_stack(t_stack **stack)
 	(*stack)->size = 0;
 
 	return (*stack);
-
 }
