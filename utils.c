@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/11 22:18:32 by phuocngu          #+#    #+#             */
+/*   Updated: 2024/12/11 22:18:36 by phuocngu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 #include <stdio.h>
 
@@ -25,9 +37,21 @@ void print_stacks(t_stack *stack1, t_stack *stack2)
 			y = y->next;
 		}
 		else
-		{
 			break;
-		}
 	}
 	printf("------------------------\n");
+}
+int is_stack_sorted(t_stack *stack)
+{
+	t_frame *current;
+
+	current = stack->top;
+	while (current->next)
+	{
+		if(current->data > current->next->data)
+			return (0);
+		current = current->next;
+	}
+
+	return (1);
 }

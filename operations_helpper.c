@@ -1,11 +1,22 @@
-#include "push_swap.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   operations_helpper.c                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/11 22:17:49 by phuocngu          #+#    #+#             */
+/*   Updated: 2024/12/11 22:17:59 by phuocngu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "push_swap.h"
 
 void ft_swap(t_stack *stack)
 {
 	t_frame *temp;
 
-	if(!stack && !stack->top && !stack->top->next)
+	if(!stack || !stack->top || !stack->top->next)
 		return;
 
 	temp = stack->top;
@@ -19,13 +30,14 @@ void ft_push_to(t_stack *des, t_stack *src)
 {
 	t_frame *temp;
 
-	if(!src && !src->top && !des)
+	if(!src || !src->top || !des)
 	{
 		return;
 	}
 
 	push(des, src->top->data);
 	pop(src);
+
 	return;
 }
 

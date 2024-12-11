@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 19:53:04 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/11 20:55:13 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/12/11 22:14:34 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ t_stack *initialize_stack(t_stack *stack)
 {
 	stack = malloc(sizeof(t_stack));
 	if(!stack)
-		return (NULL);
+		exit(EXIT_FAILURE);
 
 	stack->top = NULL;
 	stack->size = 0;

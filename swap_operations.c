@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   swap_operations.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/11 22:18:23 by phuocngu          #+#    #+#             */
+/*   Updated: 2024/12/11 22:18:25 by phuocngu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void sa(t_stack *stack)
@@ -22,7 +34,7 @@ void sb(t_stack *stack)
 
 void ss(t_stack *stack1 ,t_stack *stack2)
 {
-	if(!stack1 && !stack2)
+	if(!stack1 || !stack2)
 		return;
 
 	write(1, "ss\n", 3);
