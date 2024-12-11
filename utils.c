@@ -6,12 +6,22 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 22:18:32 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/12 00:29:27 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/12/12 00:40:13 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
+
+void	print_stack_line(t_frame *x, t_frame *y)
+{
+	if (x && y)
+		printf("a: %d, b: %d\n", x->data, y->data);
+	else if (x)
+		printf("a: %d, b: \n", x->data);
+	else if (y)
+		printf("a:  , b: %d\n", y->data);
+}
 
 void	print_stacks(t_stack *stack1, t_stack *stack2)
 {
@@ -22,24 +32,11 @@ void	print_stacks(t_stack *stack1, t_stack *stack2)
 	y = stack2->top;
 	while (x || y)
 	{
-		if (x && y)
-		{
-			printf("a: %d, b: %d \n", x->data, y->data);
+		print_stack_line(x, y);
+		if (x)
 			x = x->next;
+		if (y)
 			y = y->next;
-		}
-		else if (x)
-		{
-			printf("a: %d, b: \n", x->data);
-			x = x->next;
-		}
-		else if (y)
-		{
-			printf("a:  , b: %d\n", y->data);
-			y = y->next;
-		}
-		else
-			break ;
 	}
 	printf("------------------------\n");
 }
