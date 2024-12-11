@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 18:32:16 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/11 20:53:58 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/12/11 21:02:54 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,15 @@
 
 int main(void)
 {
-	int argc = 5;
-	char *argv[5];
-	argv[0] = "asddadsasdasd";
+	int argc = 7;
+	char *argv[7];
+	argv[0] = "Program name";
 	argv[1] = "2";
 	argv[2] = "1";
 	argv[3] = "3";
-	argv[4] = "4";
-
-
-	argv[1] = "2";
-	argv[2] = "1";
-	argv[3] = "3";
-	argv[4] = "4";
-
+	argv[4] = "6";
+	argv[5] = "5";
+	argv[6] = "8";
 
 	t_stack *a;
 	t_stack *b;
