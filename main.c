@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 18:32:16 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/12 00:23:12 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/12/12 01:02:58 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,12 @@ int	main(int argc, char *argv[])
 	b = initialize_stack(b);
 	while (--argc > 0)
 		push(a, atoi(argv[argc]));
+	push_swap(a, b);
+	exit(EXIT_SUCCESS);
+}
+
+void	push_swap(t_stack *a, t_stack *b)
+{
 	while (a || b)
 	{
 		if ((a->top && a->top->next) && a->top->data > a->top->next->data)
@@ -35,5 +41,4 @@ int	main(int argc, char *argv[])
 			break ;
 		}
 	}
-	exit(EXIT_SUCCESS);
 }

@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 16:47:12 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/12 00:22:06 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/12/12 00:54:52 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ void				ft_shift_down(t_stack *stack);
 void				ft_shift_up(t_stack *stack);
 
 int					is_stack_sorted(t_stack *stack);
+void				push_swap(t_stack *a, t_stack *b);
 
 void				sa(t_stack *stack);
 void				sb(t_stack *stack);

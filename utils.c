@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 22:18:32 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/12 00:40:13 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/12/12 01:02:19 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ int	is_stack_sorted(t_stack *stack)
 {
 	t_frame	*current;
 
+	if (!stack || !stack->top)
+		return (1);
 	current = stack->top;
 	while (current->next)
 	{
