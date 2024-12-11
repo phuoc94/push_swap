@@ -1,30 +1,30 @@
 #include "push_swap.h"
 
 
-void ft_swap(t_stack **stack)
+void ft_swap(t_stack *stack)
 {
 	t_frame *temp;
 
-	if(!*stack && !(*stack)->top && !(*stack)->top->next)
+	if(!stack && !stack->top && !stack->top->next)
 		return;
 
-	temp = (*stack)->top;
-	(*stack)->top = (*stack)->top->next;
-	temp->next = (*stack)->top->next;
-	(*stack)->top->next = temp;
+	temp = stack->top;
+	stack->top = stack->top->next;
+	temp->next = stack->top->next;
+	stack->top->next = temp;
 	return;
 }
 
-void ft_push_to(t_stack **des, t_stack **src)
+void ft_push_to(t_stack *des, t_stack *src)
 {
 	t_frame *temp;
 
-	if(!*src && !(*src)->top && !*des)
+	if(!src && !src->top && !des)
 	{
 		return;
 	}
 
-	push(des, (*src)->top->data);
+	push(des, src->top->data);
 	pop(src);
 	return;
 }

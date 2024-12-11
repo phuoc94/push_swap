@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 18:32:16 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/11 20:36:19 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/12/11 20:53:58 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,11 @@ int main(void)
 	t_stack *b;
 	int i;
 
-	a = initialize_stack(&a);
+	a = initialize_stack(a);
 	if (!a)
 		exit(EXIT_FAILURE);
 
-	b = initialize_stack(&b);
+	b = initialize_stack(b);
 	if (!b)
 		exit(EXIT_FAILURE);
 
@@ -48,65 +48,15 @@ int main(void)
 	i = argc - 1;
 	while (i > 0)
 	{
-		push(&a, atoi(argv[i]));
+		push(a, atoi(argv[i]));
 		i--;
 	}
 
-	t_frame *x;
-	t_frame *y;
+	print_stacks(a, b);
 
-	x = a->top;
-	y = b->top;
+	rra(a);
 
-	while (x || y)
-	{
-		if(x && y)
-		{
-			printf("a: %d, b: %d \n", x->data, y->data);
-			x = x->next;
-			y = y->next;
-		} else if(x)
-		{
-			printf("a: %d, b: \n", x->data);
-			x = x->next;
-		} else if(y)
-		{
-			printf("a:  , b: %d\n", y->data);
-			y = y->next;
-		}
-		else
-		{
-			break;
-		}
-	}
-
-	printf("------------------------\n");
-	ft_shift_down(a);
-
-	x = a->top;
-	y = b->top;
-
-	while (x || y)
-	{
-		if(x && y)
-		{
-			printf("a: %d, b: %d \n", x->data, y->data);
-			x = x->next;
-			y = y->next;
-		} else if(x)
-		{
-			printf("a: %d, b: \n", x->data);
-			x = x->next;
-		} else if(y)
-		{
-			printf("a:  , b: %d\n", y->data);
-			y = y->next;
-		}
-		else
-		{
-			break;
-		}
-	}
+	print_stacks(a, b);
 
 	exit(EXIT_SUCCESS);
 
