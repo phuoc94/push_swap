@@ -1,2 +1,6 @@
-a.out
-main
+*.out
+*.o
+*.a
+.vscode/
+
+push_swap
