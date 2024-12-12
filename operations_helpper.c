@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 22:17:49 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/12 00:21:51 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/12/12 13:53:42 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,8 @@ void	ft_swap(t_stack *stack)
 
 void	ft_push_to(t_stack *des, t_stack *src)
 {
-	t_frame	*temp;
-
 	if (!src || !src->top || !des)
-	{
 		return ;
-	}
 	push(des, src->top->data);
 	pop(src);
 	return ;
