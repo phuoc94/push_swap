@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 16:47:12 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/12 16:56:21 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/12/12 19:39:52 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef struct s_frame
 typedef struct s_stack
 {
 	t_frame			*top;
-	size_t			size;
+	int				size;
 }					t_stack;
 
 t_stack				*initialize_stack(t_stack *stack);

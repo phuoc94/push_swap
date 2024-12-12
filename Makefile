@@ -6,7 +6,7 @@
 #    By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/02 18:26:02 by phuocngu          #+#    #+#              #
-#    Updated: 2024/12/12 16:51:14 by phuocngu         ###   ########.fr        #
+#    Updated: 2024/12/12 19:49:31 by phuocngu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,8 @@ SRC_FILES = main.c \
 			rotate_operations.c \
 			stack.c \
 			swap_operations.c \
-			utils.c
+			utils.c \
+			push_swap.c \
 
 OBJS = $(SRC_FILES:.c=.o)
 

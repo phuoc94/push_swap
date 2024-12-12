@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 18:32:16 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/12 17:41:56 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/12/12 18:34:35 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,21 +42,4 @@ int	main(int argc, char *argv[])
 			push(a, ft_atoi(argv[argc]));
 	push_swap(a, b);
 	exit(EXIT_SUCCESS);
-}
-
-void	push_swap(t_stack *a, t_stack *b)
-{
-	while (a || b)
-	{
-		if ((a->top && a->top->next) && a->top->data > a->top->next->data)
-			sa(a);
-		else
-			pb(b, a);
-		if (a->size == 0 || is_stack_sorted(a))
-		{
-			while (b->size)
-				pa(a, b);
-			break ;
-		}
-	}
 }
