@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 22:18:32 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/12 01:02:19 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/12/12 16:45:12 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 void	print_stack_line(t_frame *x, t_frame *y)
 {
 	if (x && y)
-		printf("a: %d, b: %d\n", x->data, y->data);
+		ft_printf("a: %d, b: %d\n", x->data, y->data);
 	else if (x)
-		printf("a: %d, b: \n", x->data);
+		ft_printf("a: %d, b: \n", x->data);
 	else if (y)
-		printf("a:  , b: %d\n", y->data);
+		ft_printf("a:  , b: %d\n", y->data);
 }
 
 void	print_stacks(t_stack *stack1, t_stack *stack2)
@@ -38,7 +38,7 @@ void	print_stacks(t_stack *stack1, t_stack *stack2)
 		if (y)
 			y = y->next;
 	}
-	printf("------------------------\n");
+	ft_printf("------------------------\n");
 }
 
 int	is_stack_sorted(t_stack *stack)

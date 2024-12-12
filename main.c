@@ -6,12 +6,11 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 18:32:16 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/12 15:53:11 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/12/12 16:01:57 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 int	main(int argc, char *argv[])
 {
@@ -27,7 +26,7 @@ int	main(int argc, char *argv[])
 	a = initialize_stack(a);
 	b = initialize_stack(b);
 	while (--argc > 0)
-		push(a, atoi(argv[argc]));
+		push(a, ft_atoi(argv[argc]));
 	push_swap(a, b);
 	exit(EXIT_SUCCESS);
 }
