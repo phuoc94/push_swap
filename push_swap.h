@@ -6,14 +6,13 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 16:47:12 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/12 16:45:59 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/12/12 16:56:21 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include <stdlib.h>
 # include <unistd.h> // write
 # include "./libft/libft.h"
 # include "./ft_printf/ft_printf.h"
