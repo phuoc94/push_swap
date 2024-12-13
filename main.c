@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 18:32:16 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/13 15:36:04 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/12/13 16:13:02 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int	main(int argc, char *argv[])
 	// push_swap(a, b);
 	exit(EXIT_SUCCESS);
 }
+
 void	parse_input(int argc, char *argv[], t_stack *stack)
 {
 	char	**argv2;
@@ -48,7 +49,8 @@ void	parse_input(int argc, char *argv[], t_stack *stack)
 			res = ft_strtol(str, &endptr, 10);
 			if (endptr == str)
 			{
-				ft_printf("Error\n");
+				print_error();
+				free_stack(stack);
 				exit(EXIT_FAILURE);
 			}
 			else
@@ -64,12 +66,12 @@ void	parse_input(int argc, char *argv[], t_stack *stack)
 			res = ft_strtol(str, &endptr, 10);
 			if (endptr == str)
 			{
-				ft_printf("Error\n");
+				print_error();
+				free_stack(stack);
 				exit(EXIT_FAILURE);
 			}
 			else
 				push(stack, res);
 		}
 	}
-	ft_printf("parse done\n");
 }

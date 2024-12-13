@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 16:47:12 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/12 19:39:52 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/12/13 16:17:01 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,12 @@ typedef struct s_stack
 	int				size;
 }					t_stack;
 
+int					is_stack_sorted(t_stack *stack);
+void				push_swap(t_stack *a, t_stack *b);
+void 				parse_input(int argc, char *argv[], t_stack *stack);
+
 t_stack				*initialize_stack(t_stack *stack);
+void				free_stack(t_stack *stack);
 
 int					pop(t_stack *stack);
 t_stack				*push(t_stack *stack, int data);
@@ -38,9 +43,6 @@ void				ft_swap(t_stack *stack);
 void				ft_push_to(t_stack *des, t_stack *src);
 void				ft_shift_down(t_stack *stack);
 void				ft_shift_up(t_stack *stack);
-
-int					is_stack_sorted(t_stack *stack);
-void				push_swap(t_stack *a, t_stack *b);
 
 void				sa(t_stack *stack);
 void				sb(t_stack *stack);
@@ -55,5 +57,7 @@ void				rrb(t_stack *stack);
 void				rrr(t_stack *stack1, t_stack *stack2);
 
 void				print_stacks(t_stack *stack1, t_stack *stack2);
+
+void				print_error();
 
 #endif

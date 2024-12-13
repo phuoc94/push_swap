@@ -6,7 +6,7 @@
 #    By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/02 18:26:02 by phuocngu          #+#    #+#              #
-#    Updated: 2024/12/12 19:49:31 by phuocngu         ###   ########.fr        #
+#    Updated: 2024/12/13 16:18:31 by phuocngu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ SRC_FILES = main.c \
 			swap_operations.c \
 			utils.c \
 			push_swap.c \
+			print_error.c \
 
 OBJS = $(SRC_FILES:.c=.o)
 
