@@ -1,35 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strclen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/02 18:32:16 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/13 19:19:46 by phuocngu         ###   ########.fr       */
+/*   Created: 2024/12/13 19:34:17 by phuocngu          #+#    #+#             */
+/*   Updated: 2024/12/13 19:41:34 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char *argv[])
+size_t	ft_strclen(const char *s, char c)
 {
-	t_stack	*a;
-	t_stack	*b;
+	size_t	i;
 
-	a = NULL;
-	b = NULL;
-	if (argc < 2)
-		return (1);
-	a = initialize_stack(a);
-	b = initialize_stack(b);
-	parse_input(argc, argv, a);
-	check_duplicates(a);
-	push_swap(a, b);
-	free_stack(a);
-	free(a);
-	free(b);
-	a = NULL;
-	b = NULL;
-	exit(EXIT_SUCCESS);
+	i = 0;
+	while (s[i] && s[i] != c)
+		i++;
+	return (i);
 }

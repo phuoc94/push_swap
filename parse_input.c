@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 16:21:27 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/13 19:11:58 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/12/13 19:36:58 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ void	parse_single_arg(char *arg, t_stack *stack)
 		push(stack, (int)res);
 		i--;
 	}
+    free_ft_split(argv2);
 }
 
 void	parse_multiple_args(int argc, char *argv[], t_stack *stack)
