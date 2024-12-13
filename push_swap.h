@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 16:47:12 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/13 16:17:01 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/12/13 16:23:57 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ void				rrb(t_stack *stack);
 void				rrr(t_stack *stack1, t_stack *stack2);
 
 void				print_stacks(t_stack *stack1, t_stack *stack2);
+void 				parse_input(int argc, char *argv[], t_stack *stack);
 
 void				print_error();
 
