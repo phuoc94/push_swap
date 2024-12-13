@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 17:21:30 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/13 19:42:10 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/12/13 19:54:21 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static size_t	count_words(const char *s, char c)
 	return (words);
 }
 
-void free_ft_split(char **strs)
+void	free_ft_split(char **strs)
 {
 	int	i;
 
