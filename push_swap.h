@@ -6,16 +6,16 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 16:47:12 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/13 16:23:57 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/12/13 19:09:58 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include <unistd.h> // write
-# include "./libft/libft.h"
 # include "./ft_printf/ft_printf.h"
+# include "./libft/libft.h"
+# include <unistd.h> // write
 
 typedef struct s_frame
 {
@@ -31,7 +31,7 @@ typedef struct s_stack
 
 int					is_stack_sorted(t_stack *stack);
 void				push_swap(t_stack *a, t_stack *b);
-void 				parse_input(int argc, char *argv[], t_stack *stack);
+void				parse_input(int argc, char *argv[], t_stack *stack);
 
 t_stack				*initialize_stack(t_stack *stack);
 void				free_stack(t_stack *stack);
@@ -57,8 +57,9 @@ void				rrb(t_stack *stack);
 void				rrr(t_stack *stack1, t_stack *stack2);
 
 void				print_stacks(t_stack *stack1, t_stack *stack2);
-void 				parse_input(int argc, char *argv[], t_stack *stack);
+void				parse_input(int argc, char *argv[], t_stack *stack);
+void				check_duplicates(t_stack *stack);
 
-void				print_error();
+void				print_error(void);
 
 #endif

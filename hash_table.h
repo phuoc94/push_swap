@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   hash_table.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/02 18:32:16 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/13 18:04:18 by phuocngu         ###   ########.fr       */
+/*   Created: 2024/12/13 18:49:01 by phuocngu          #+#    #+#             */
+/*   Updated: 2024/12/13 19:03:41 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#ifndef HASH_TABLE_H
+# define HASH_TABLE_H
 
-int	main(int argc, char *argv[])
+typedef struct s_hash_node
 {
-	t_stack	*a;
-	t_stack	*b;
+	int					value;
+	struct s_hash_node	*next;
+}						t_hash_node;
 
-	a = NULL;
-	b = NULL;
-	if (argc < 2)
-		return (1);
-	a = initialize_stack(a);
-	b = initialize_stack(b);
-	parse_input(argc, argv, a);
-	check_duplicates(a);
-	push_swap(a, b);
-	exit(EXIT_SUCCESS);
-}
+typedef struct s_hash_table
+{
+	t_hash_node			**buckets;
+	int					num_of_buckets;
+}						t_hash_table;
+
+t_hash_table	*create_hash_table(int num_of_buckets);
+int				insert_to_hash_table(t_hash_table *table, int value);
+void			free_hash_table(t_hash_table *table);
+
+#endif

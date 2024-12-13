@@ -6,20 +6,11 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 18:47:30 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/12 19:48:37 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/12/13 19:16:16 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-
-/*
-1. Find the smallest number in Stack A.-
-2. Move the smallest number found to the top of Stack A.
-3. Push that number to Stack B.
-4. Repeat steps 1–3 until Stack A is empty.
-5. Push everything back to stack A once Stack B has all the numbers from biggest to smallest.
-*/
 
 int	find_smallest_index(t_stack *a)
 {
@@ -71,4 +62,3 @@ void	push_swap(t_stack *a, t_stack *b)
 	while (b->size > 0)
 		pa(a, b);
 }
-

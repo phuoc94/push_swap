@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 19:53:04 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/13 16:09:02 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/12/13 19:14:53 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,10 +51,10 @@ t_stack	*initialize_stack(t_stack *stack)
 	return (stack);
 }
 
-void free_stack(t_stack *stack)
+void	free_stack(t_stack *stack)
 {
 	t_frame	*current;
-	t_frame *tmp_next;
+	t_frame	*tmp_next;
 
 	current = stack->top;
 	while (current)

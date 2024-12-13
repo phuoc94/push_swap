@@ -6,7 +6,7 @@
 #    By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/02 18:26:02 by phuocngu          #+#    #+#              #
-#    Updated: 2024/12/13 16:24:37 by phuocngu         ###   ########.fr        #
+#    Updated: 2024/12/13 18:57:12 by phuocngu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,8 @@ SRC_FILES = main.c \
 			push_swap.c \
 			print_error.c \
 			parse_input.c \
+			check_duplicates.c \
+			hash_table.c \
 
 OBJS = $(SRC_FILES:.c=.o)
 

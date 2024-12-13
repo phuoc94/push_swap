@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   check_duplicates.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/02 18:32:16 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/13 18:04:18 by phuocngu         ###   ########.fr       */
+/*   Created: 2024/12/13 17:19:41 by phuocngu          #+#    #+#             */
+/*   Updated: 2024/12/13 19:01:48 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include "hash_table.h"
 
-int	main(int argc, char *argv[])
+void	check_duplicates(t_stack *stack)
 {
-	t_stack	*a;
-	t_stack	*b;
+	t_hash_table	*hash_table;
+	t_frame			*current;
 
-	a = NULL;
-	b = NULL;
-	if (argc < 2)
-		return (1);
-	a = initialize_stack(a);
-	b = initialize_stack(b);
-	parse_input(argc, argv, a);
-	check_duplicates(a);
-	push_swap(a, b);
-	exit(EXIT_SUCCESS);
+	hash_table = create_hash_table(stack->size);
+	current = stack->top;
+	while (current)
+	{
+		if (!insert_to_hash_table(hash_table, current->data))
+		{
+			print_error();
+			free_hash_table(hash_table);
+			exit(EXIT_FAILURE);
+		}
+		current = current->next;
+	}
+	free_hash_table(hash_table);
 }
