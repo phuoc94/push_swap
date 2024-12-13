@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 16:21:27 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/13 16:22:16 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/12/13 17:09:51 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void parse_single_arg(char *arg, t_stack *stack)
 {
     char **argv2;
     char *endptr;
-    int res;
+    long res;
     int i;
 
     argv2 = ft_split(arg, ' ');
@@ -27,13 +27,13 @@ void parse_single_arg(char *arg, t_stack *stack)
     while (i >= 0)
     {
         res = ft_strtol(argv2[i], &endptr, 10);
-        if (endptr == argv2[i])
+        if (endptr == argv2[i] || res > INT_MAX || res < INT_MIN)
         {
             print_error();
             free_stack(stack);
             exit(EXIT_FAILURE);
         }
-        push(stack, res);
+        push(stack, (int)res);
         i--;
     }
 }
@@ -41,18 +41,19 @@ void parse_single_arg(char *arg, t_stack *stack)
 void parse_multiple_args(int argc, char *argv[], t_stack *stack)
 {
     char *endptr;
-    int res;
+    long res;
 
     while (--argc > 0)
     {
         res = ft_strtol(argv[argc], &endptr, 10);
-        if (endptr == argv[argc])
+
+        if (endptr == argv[argc] || res > INT_MAX || res < INT_MIN)
         {
             print_error();
             free_stack(stack);
             exit(EXIT_FAILURE);
         }
-        push(stack, res);
+        push(stack, (int)res);
     }
 }
 
