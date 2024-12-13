@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 18:32:16 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/12 18:34:35 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/12/13 15:36:04 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,30 +16,60 @@ int	main(int argc, char *argv[])
 {
 	t_stack	*a;
 	t_stack	*b;
-	char **argv2;
-	int i;
-
 
 	a = NULL;
 	b = NULL;
-	i = 0;
-	if(argc < 2)
+	if (argc < 2)
 		return (1);
-
 	a = initialize_stack(a);
 	b = initialize_stack(b);
-	if(argc == 2)
+	parse_input(argc, argv, a);
+	// push_swap(a, b);
+	exit(EXIT_SUCCESS);
+}
+void	parse_input(int argc, char *argv[], t_stack *stack)
+{
+	char	**argv2;
+	int		i;
+	int		res;
+	char	*endptr;
+	char	*str;
+
+	i = 0;
+	if (argc == 2)
 	{
 		argv2 = ft_split(argv[1], ' ');
 		while (argv2[i])
 			i++;
 		i--;
 		while (i >= 0)
-			push(a, ft_atoi(argv2[i--]));
+		{
+			str = argv2[i];
+			res = ft_strtol(str, &endptr, 10);
+			if (endptr == str)
+			{
+				ft_printf("Error\n");
+				exit(EXIT_FAILURE);
+			}
+			else
+				push(stack, res);
+			i--;
+		}
 	}
 	else
+	{
 		while (--argc > 0)
-			push(a, ft_atoi(argv[argc]));
-	push_swap(a, b);
-	exit(EXIT_SUCCESS);
+		{
+			str = argv[argc];
+			res = ft_strtol(str, &endptr, 10);
+			if (endptr == str)
+			{
+				ft_printf("Error\n");
+				exit(EXIT_FAILURE);
+			}
+			else
+				push(stack, res);
+		}
+	}
+	ft_printf("parse done\n");
 }

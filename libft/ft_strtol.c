@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 14:38:28 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/13 15:24:30 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/12/13 15:50:31 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,10 +68,11 @@ long	ft_strtol(const char *nptr, char **endptr, int base)
 	sign = ft_parse_sign(&nptr);
 	result = 0;
 	digit = ft_char_to_digit(*nptr);
-	while ((digit >= 0) && (digit < base))
+	while (digit >= 0 && digit < base)
 	{
 		result = result * base + digit;
 		nptr++;
+		digit = ft_char_to_digit(*nptr);
 	}
 	if (endptr)
 		*endptr = (char *)nptr;
