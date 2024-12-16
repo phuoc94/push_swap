@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 16:47:12 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/13 19:09:58 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/12/16 22:19:14 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include "./ft_printf/ft_printf.h"
 # include "./libft/libft.h"
 # include <unistd.h> // write
+# include "lis.h"
 
 typedef struct s_frame
 {
@@ -61,5 +62,10 @@ void				parse_input(int argc, char *argv[], t_stack *stack);
 void				check_duplicates(t_stack *stack);
 
 void				print_error(void);
+
+int					*get_lis(t_stack *stack, int *length);
+
+int					*stack_to_array(t_stack *stack);
+void				print_arr(int *arr, int size);
 
 #endif

@@ -1,27 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   lis_helpper.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/12 18:47:30 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/16 22:19:36 by phuocngu         ###   ########.fr       */
+/*   Created: 2024/12/16 13:43:16 by phuocngu          #+#    #+#             */
+/*   Updated: 2024/12/16 16:24:15 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 
-
-void	push_swap(t_stack *a, t_stack *b)
+//
+//
+int	*stack_to_array(t_stack *stack)
 {
-	int		*lis;
-	int		lis_length;
+	int		*arr;
+	int		i;
 
-	lis = get_lis(a, &lis_length);
-	//move_non_lis_to_b(a, b, lis, lis_length);
-	(void)b;
+	t_frame	*current;
 
-
+	if (!stack || !(stack->top))
+		return (NULL);
+	arr = malloc(sizeof(int) * stack->size);
+	if (!arr)
+		return (NULL);
+	current = stack->top;
+	i = 0;
+	while (current)
+	{
+		arr[i] = current->data;
+		current = current->next;
+		i++;
+	}
+	return (arr);
 }

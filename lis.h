@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   lis.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/12 18:47:30 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/16 22:19:36 by phuocngu         ###   ########.fr       */
+/*   Created: 2024/12/13 18:49:01 by phuocngu          #+#    #+#             */
+/*   Updated: 2024/12/16 22:08:21 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#ifndef LIS_H
+# define LIS_H
 
-
-
-void	push_swap(t_stack *a, t_stack *b)
+typedef struct s_lis
 {
-	int		*lis;
-	int		lis_length;
+	int					*arr;
+	int					arr_size;
+	int					*lis;
+	int					*prev_index;
+	int					lis_size;
+	int					max_index;
+}						t_lis;
 
-	lis = get_lis(a, &lis_length);
-	//move_non_lis_to_b(a, b, lis, lis_length);
-	(void)b;
-
-
-}
+#endif
