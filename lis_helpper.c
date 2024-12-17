@@ -6,20 +6,16 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 13:43:16 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/16 16:24:15 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/12/17 15:28:55 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
-//
-//
 int	*stack_to_array(t_stack *stack)
 {
 	int		*arr;
 	int		i;
-
 	t_frame	*current;
 
 	if (!stack || !(stack->top))
@@ -36,4 +32,38 @@ int	*stack_to_array(t_stack *stack)
 		i++;
 	}
 	return (arr);
+}
+
+int	get_max_index(int *arr, int size)
+{
+	int	i;
+	int	max;
+	int	max_index;
+
+	i = 0;
+	max = arr[0];
+	max_index = 0;
+	while (i < size)
+	{
+		if (arr[i] > max)
+		{
+			max = arr[i];
+			max_index = i;
+		}
+		i++;
+	}
+	return (max_index);
+}
+
+void	print_arr(int *arr, int size)
+{
+	int	i;
+
+	i = 0;
+	while (i < size)
+	{
+		ft_printf("arr[%d]: %d\n", i, arr[i]);
+		i++;
+	}
+	ft_printf("------------------------------\n");
 }
