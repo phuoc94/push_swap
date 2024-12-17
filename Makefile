@@ -6,7 +6,7 @@
 #    By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/02 18:26:02 by phuocngu          #+#    #+#              #
-#    Updated: 2024/12/17 20:12:33 by phuocngu         ###   ########.fr        #
+#    Updated: 2024/12/17 21:06:06 by phuocngu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,7 @@ SRC_FILES = $(SRC_DIR)/main.c \
             $(SRC_DIR)/sorting_helpper.c \
             $(SRC_DIR)/algorithm.c \
             $(SRC_DIR)/algorithm_helpper.c \
+            $(SRC_DIR)/push_cheapest.c \
             $(OP_DIR)/operations_helpper.c \
             $(OP_DIR)/push_operations.c \
             $(OP_DIR)/reverse_rotate_operations.c \
