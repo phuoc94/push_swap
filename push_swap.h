@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 16:47:12 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/17 18:14:10 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/12/17 19:11:13 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,17 @@
 # include "./ft_printf/ft_printf.h"
 # include "./libft/libft.h"
 # include "./lis/lis.h"
+# include <stdbool.h>
 
 typedef struct s_frame
 {
 	int				data;
+	int				current_position;
+	int				final_index;
+	int				push_price;
+	bool			above_median;
+	bool			cheapest;
+	struct s_frame	*target_node;
 	struct s_frame	*next;
 }					t_frame;
 
@@ -70,5 +77,7 @@ int					get_max_index(int *arr, int size);
 
 void				move_non_lis_to_b(t_stack *a, t_stack *b, int *arr,
 						int lis_length);
+
+void				set_nodes_data(t_stack *a, t_stack *b);
 
 #endif
