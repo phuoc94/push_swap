@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/17 20:08:11 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/17 20:10:21 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/12/17 21:28:07 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ t_frame	*find_target_node(t_stack *target_stack, t_frame *current_b)
 	best_match = INT_MAX;
 	if (target_stack == NULL || current_b == NULL)
 		return (NULL);
+	best_node = NULL;
 	current_a = target_stack->top;
 	while (current_a)
 	{
