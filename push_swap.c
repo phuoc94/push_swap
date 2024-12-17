@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 18:47:30 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/17 15:27:52 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/12/17 16:57:13 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void	push_swap(t_stack *a, t_stack *b)
 	int		lis_length;
 
 	lis = get_lis(a, &lis_length);
+	move_non_lis_to_b(a, b, lis, lis_length);
 	free(lis);
 	(void)b;
 }

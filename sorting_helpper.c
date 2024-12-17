@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lis.h                                              :+:      :+:    :+:   */
+/*   sorting_helpper.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/13 18:49:01 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/17 15:39:59 by phuocngu         ###   ########.fr       */
+/*   Created: 2024/12/17 15:39:16 by phuocngu          #+#    #+#             */
+/*   Updated: 2024/12/17 15:39:42 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIS_H
-# define LIS_H
+#include "push_swap.h"
 
-typedef struct s_lis
+void	move_non_lis_to_b(t_stack *a, t_stack *b, int *lis, int lis_length)
 {
-	int					*arr;
-	int					arr_size;
-	int					*lis;
-	int					*prev_index;
-	int					lis_size;
-	int					max_index;
-}						t_lis;
-
-int	is_in_lis(int data, int *lis, int lis_length);
-
-#endif
+	while (a->size > lis_length)
+	{
+		if (!is_in_lis(a->top->data, lis, lis_length))
+		{
+			pb(b, a);
+		}
+		else
+		{
+			ra(a);
+		}
+	}
+}

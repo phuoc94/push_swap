@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 18:32:16 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/13 19:19:46 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/12/17 17:09:42 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int	main(int argc, char *argv[])
 	check_duplicates(a);
 	push_swap(a, b);
 	free_stack(a);
+	free_stack(b);
 	free(a);
 	free(b);
 	a = NULL;

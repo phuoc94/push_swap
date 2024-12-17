@@ -6,7 +6,7 @@
 #    By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/02 18:26:02 by phuocngu          #+#    #+#              #
-#    Updated: 2024/12/16 20:59:29 by phuocngu         ###   ########.fr        #
+#    Updated: 2024/12/17 15:43:27 by phuocngu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,7 @@ SRC_FILES = main.c \
 			hash_table.c \
 			lis_helpper.c \
 			lis.c \
+			sorting_helpper.c \
 
 OBJS = $(SRC_FILES:.c=.o)
 

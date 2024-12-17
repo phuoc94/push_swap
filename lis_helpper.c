@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 13:43:16 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/17 15:28:55 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/12/17 15:36:59 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,20 @@ int	get_max_index(int *arr, int size)
 		i++;
 	}
 	return (max_index);
+}
+
+int	is_in_lis(int data, int *lis, int lis_length)
+{
+	int	i;
+
+	i = 0;
+	while (i < lis_length)
+	{
+		if (data == lis[i])
+			return (1);
+		i++;
+	}
+	return (0);
 }
 
 void	print_arr(int *arr, int size)

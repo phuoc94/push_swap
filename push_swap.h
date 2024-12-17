@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 16:47:12 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/17 15:29:52 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/12/17 15:43:10 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,5 +68,7 @@ int					*get_lis(t_stack *stack, int *length);
 int					*stack_to_array(t_stack *stack);
 void				print_arr(int *arr, int size);
 int					get_max_index(int *arr, int size);
+
+void				move_non_lis_to_b(t_stack *a, t_stack *b, int *arr, int lis_length);
 
 #endif
