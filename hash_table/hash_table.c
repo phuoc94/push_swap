@@ -6,11 +6,11 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 18:52:48 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/13 19:04:02 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/12/17 17:40:46 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 #include "hash_table.h"
 
 int	hash_function(int value, int num_of_buckets)

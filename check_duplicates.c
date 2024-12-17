@@ -6,12 +6,12 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 17:19:41 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/13 19:01:48 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/12/17 17:14:31 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "hash_table.h"
+#include "./hash_table/hash_table.h"
 
 void	check_duplicates(t_stack *stack)
 {

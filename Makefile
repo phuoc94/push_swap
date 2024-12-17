@@ -6,29 +6,34 @@
 #    By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/02 18:26:02 by phuocngu          #+#    #+#              #
-#    Updated: 2024/12/17 15:43:27 by phuocngu         ###   ########.fr        #
+#    Updated: 2024/12/17 17:39:42 by phuocngu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
-SRC_FILES = main.c \
-			operations_helpper.c \
-			push_operations.c \
-			reverse_rotate_operations.c \
-			rotate_operations.c \
-			stack.c \
-			swap_operations.c \
-			utils.c \
-			push_swap.c \
-			print_error.c \
-			parse_input.c \
-			check_duplicates.c \
-			hash_table.c \
-			lis_helpper.c \
-			lis.c \
-			sorting_helpper.c \
+SRC_DIR = .
+OP_DIR = ./operations
+HT_DIR = ./hash_table
+LIS_DIR = ./lis
+
+SRC_FILES = $(SRC_DIR)/main.c \
+            $(SRC_DIR)/stack.c \
+            $(SRC_DIR)/utils.c \
+            $(SRC_DIR)/push_swap.c \
+            $(SRC_DIR)/print_error.c \
+            $(SRC_DIR)/parse_input.c \
+            $(SRC_DIR)/check_duplicates.c \
+            $(SRC_DIR)/sorting_helpper.c \
+            $(OP_DIR)/operations_helpper.c \
+            $(OP_DIR)/push_operations.c \
+            $(OP_DIR)/reverse_rotate_operations.c \
+            $(OP_DIR)/rotate_operations.c \
+            $(OP_DIR)/swap_operations.c \
+            $(HT_DIR)/hash_table.c \
+            $(LIS_DIR)/lis_helpper.c \
+            $(LIS_DIR)/lis.c
 
 OBJS = $(SRC_FILES:.c=.o)
 

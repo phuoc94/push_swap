@@ -6,11 +6,11 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 13:38:59 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/17 15:28:15 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/12/17 17:41:11 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	*reconstruct_lis(t_lis *listype)
 {

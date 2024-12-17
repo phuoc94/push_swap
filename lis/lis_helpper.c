@@ -6,11 +6,11 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 13:43:16 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/17 15:36:59 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/12/17 17:40:58 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	*stack_to_array(t_stack *stack)
 {

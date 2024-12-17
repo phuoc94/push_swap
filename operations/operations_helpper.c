@@ -6,11 +6,11 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 22:17:49 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/17 16:53:23 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/12/17 18:12:58 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	ft_swap(t_stack *stack)
 {
@@ -27,7 +27,7 @@ void	ft_swap(t_stack *stack)
 
 void	ft_push_to(t_stack *des, t_stack *src)
 {
-	t_frame *top_frame;
+	t_frame	*top_frame;
 
 	if (!src || !src->top || !des)
 		return ;
