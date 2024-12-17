@@ -6,7 +6,7 @@
 #    By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/02 18:26:02 by phuocngu          #+#    #+#              #
-#    Updated: 2024/12/17 17:39:42 by phuocngu         ###   ########.fr        #
+#    Updated: 2024/12/17 20:12:33 by phuocngu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,8 @@ SRC_FILES = $(SRC_DIR)/main.c \
             $(SRC_DIR)/parse_input.c \
             $(SRC_DIR)/check_duplicates.c \
             $(SRC_DIR)/sorting_helpper.c \
+            $(SRC_DIR)/algorithm.c \
+            $(SRC_DIR)/algorithm_helpper.c \
             $(OP_DIR)/operations_helpper.c \
             $(OP_DIR)/push_operations.c \
             $(OP_DIR)/reverse_rotate_operations.c \
