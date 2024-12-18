@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 18:32:16 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/17 17:09:42 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/12/18 21:40:29 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,9 @@ int	main(int argc, char *argv[])
 		return (1);
 	a = initialize_stack(a);
 	b = initialize_stack(b);
-	parse_input(argc, argv, a);
-	check_duplicates(a);
+	parse_input(argc, argv, a, b);
+	check_duplicates(a, b);
 	push_swap(a, b);
-	free_stack(a);
-	free_stack(b);
-	free(a);
-	free(b);
-	a = NULL;
-	b = NULL;
+	free_error(&a, &b);
 	exit(EXIT_SUCCESS);
 }

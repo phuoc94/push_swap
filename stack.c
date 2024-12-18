@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 19:53:04 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/13 19:14:53 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/12/18 21:18:57 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ t_stack	*push(t_stack *stack, int data)
 {
 	t_frame	*frame;
 
-	frame = malloc(sizeof(t_frame));
+	frame = ft_calloc(sizeof(t_frame), 1);
 	if (!frame)
 		return (NULL);
 	frame->data = data;
@@ -63,4 +63,5 @@ void	free_stack(t_stack *stack)
 		free(current);
 		current = tmp_next;
 	}
+	stack = NULL;
 }

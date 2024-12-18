@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 16:47:12 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/18 14:26:20 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/12/18 21:44:12 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,8 @@ typedef struct s_stack
 
 int					is_stack_sorted(t_stack *stack);
 void				push_swap(t_stack *a, t_stack *b);
-void				parse_input(int argc, char *argv[], t_stack *stack);
+void				parse_input(int argc, char *argv[], t_stack *stack,
+						t_stack *stack2);
 
 t_stack				*initialize_stack(t_stack *stack);
 void				free_stack(t_stack *stack);
@@ -63,11 +64,10 @@ void				rrb(t_stack *stack);
 void				rrr(t_stack *stack1, t_stack *stack2);
 
 void				print_stacks(t_stack *stack1, t_stack *stack2);
-void				parse_input(int argc, char *argv[], t_stack *stack);
-void				check_duplicates(t_stack *stack);
+void				check_duplicates(t_stack *stack, t_stack *stack2);
 
 void				print_error(void);
-
+void				free_error(t_stack **a, t_stack **b);
 int					*get_lis(t_stack *stack, int *length);
 
 int					*stack_to_array(t_stack *stack);

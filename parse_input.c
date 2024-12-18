@@ -6,13 +6,13 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 16:21:27 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/13 20:03:59 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/12/18 21:46:40 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	parse_single_arg(char *arg, t_stack *stack)
+void	parse_single_arg(char *arg, t_stack *stack, t_stack *stack2)
 {
 	char	**argv2;
 	char	*endptr;
@@ -30,7 +30,8 @@ void	parse_single_arg(char *arg, t_stack *stack)
 		if (endptr == argv2[i] || res > INT_MAX || res < INT_MIN)
 		{
 			print_error();
-			free_stack(stack);
+			free_ft_split(argv2);
+			free_error(&stack, &stack2);
 			exit(EXIT_FAILURE);
 		}
 		push(stack, (int)res);
@@ -39,7 +40,8 @@ void	parse_single_arg(char *arg, t_stack *stack)
 	free_ft_split(argv2);
 }
 
-void	parse_multiple_args(int argc, char *argv[], t_stack *stack)
+void	parse_multiple_args(int argc, char *argv[], t_stack *stack,
+		t_stack *stack2)
 {
 	char	*endptr;
 	long	res;
@@ -50,17 +52,17 @@ void	parse_multiple_args(int argc, char *argv[], t_stack *stack)
 		if (endptr == argv[argc] || res > INT_MAX || res < INT_MIN)
 		{
 			print_error();
-			free_stack(stack);
+			free_error(&stack, &stack2);
 			exit(EXIT_FAILURE);
 		}
 		push(stack, (int)res);
 	}
 }
 
-void	parse_input(int argc, char *argv[], t_stack *stack)
+void	parse_input(int argc, char *argv[], t_stack *stack, t_stack *stack2)
 {
 	if (argc == 2)
-		parse_single_arg(argv[1], stack);
+		parse_single_arg(argv[1], stack, stack2);
 	else
-		parse_multiple_args(argc, argv, stack);
+		parse_multiple_args(argc, argv, stack, stack2);
 }
