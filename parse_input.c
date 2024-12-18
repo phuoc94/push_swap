@@ -6,11 +6,29 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 16:21:27 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/18 22:00:18 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/12/18 23:25:07 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int is_number(char *s)
+{
+    int i = 0;
+
+    if (s[i] == '-' || s[i] == '+')
+        i++;
+    if (s[i] == '\0')
+        return 0;
+    while (s[i] != '\0')
+    {
+        if (!ft_isdigit(s[i]))
+            return 0;
+        i++;
+    }
+    return 1;
+}
+
 
 void	parse_single_arg(char *arg, t_stack *stack, t_stack *stack2)
 {
@@ -18,6 +36,7 @@ void	parse_single_arg(char *arg, t_stack *stack, t_stack *stack2)
 	char	*endptr;
 	long	res;
 	int		i;
+	int		is_num;
 
 	argv2 = ft_split(arg, ' ');
 	i = 0;
@@ -32,8 +51,9 @@ void	parse_single_arg(char *arg, t_stack *stack, t_stack *stack2)
 	i--;
 	while (i >= 0)
 	{
+		is_num = is_number(argv2[i]);
 		res = ft_strtol(argv2[i], &endptr, 10);
-		if (endptr == argv2[i] || res > INT_MAX || res < INT_MIN)
+		if (endptr == argv2[i] || res > INT_MAX || res < INT_MIN || !is_num)
 		{
 			print_error();
 			free_ft_split(argv2);
