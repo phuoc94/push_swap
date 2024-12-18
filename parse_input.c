@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 16:21:27 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/18 21:46:40 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/12/18 22:00:18 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,12 @@ void	parse_single_arg(char *arg, t_stack *stack, t_stack *stack2)
 	i = 0;
 	while (argv2[i])
 		i++;
+	if(i == 0)
+	{
+		free_error(&stack, &stack2);
+		free_ft_split(argv2);
+		exit(EXIT_FAILURE);
+	}
 	i--;
 	while (i >= 0)
 	{
