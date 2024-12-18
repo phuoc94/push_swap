@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 16:47:12 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/17 21:17:24 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/12/18 14:26:20 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ typedef struct s_frame
 {
 	int				data;
 	int				current_position;
-	int				final_index;
 	int				push_price;
 	bool			above_median;
 	bool			cheapest;
@@ -79,7 +78,8 @@ void				move_non_lis_to_b(t_stack *a, t_stack *b, int *arr,
 						int lis_length);
 
 void				set_nodes_data(t_stack *a, t_stack *b);
-t_frame				*find_target_node(t_stack *target_stack, t_frame *current_b);
+t_frame				*find_target_node(t_stack *target_stack,
+						t_frame *current_b);
 t_frame				*find_smallest(t_stack *stack);
 void				set_current_position(t_stack *stack);
 void				push_cheapest(t_stack *a, t_stack *b);

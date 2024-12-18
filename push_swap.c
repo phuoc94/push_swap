@@ -6,13 +6,13 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 18:47:30 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/17 22:55:09 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/12/18 14:23:06 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void print_node_data(t_frame *node)
+void	print_node_data(t_frame *node)
 {
 	ft_printf("data: %d\n", node->data);
 	ft_printf("current_position: %d\n", node->current_position);
@@ -28,7 +28,8 @@ void	push_swap(t_stack *a, t_stack *b)
 {
 	int		*lis;
 	int		lis_length;
-	t_frame *smallest;
+	t_frame	*smallest;
+
 	lis = get_lis(a, &lis_length);
 	move_non_lis_to_b(a, b, lis, lis_length);
 	free(lis);
@@ -37,7 +38,6 @@ void	push_swap(t_stack *a, t_stack *b)
 		set_nodes_data(a, b);
 		push_cheapest(a, b);
 	}
-
 	set_current_position(a);
 	smallest = find_smallest(a);
 	if (smallest->above_median)
@@ -46,6 +46,4 @@ void	push_swap(t_stack *a, t_stack *b)
 	else
 		while (a->top != smallest)
 			rra(a);
-
-	print_stacks(a, b);
 }
