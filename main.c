@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 18:32:16 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/18 21:40:29 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/12/19 20:54:48 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,7 @@ int	main(int argc, char *argv[])
 	push_swap(a, b);
 	free_error(&a, &b);
 	exit(EXIT_SUCCESS);
+
+
+
 }
