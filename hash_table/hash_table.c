@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 18:52:48 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/17 17:40:46 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/12/19 16:21:48 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,15 @@ int	hash_function(int value, int num_of_buckets)
 t_hash_table	*create_hash_table(int num_of_buckets)
 {
 	t_hash_table	*table;
-	int				i;
 
-	i = 0;
 	table = malloc(sizeof(t_hash_table));
-	table->buckets = malloc(sizeof(t_hash_node *) * num_of_buckets);
-	while (i < num_of_buckets)
+	if (!table)
+		return (NULL);
+	table->buckets = ft_calloc(sizeof(t_hash_node *), num_of_buckets);
+	if (!table->buckets)
 	{
-		table->buckets[i++] = NULL;
+		free(table);
+		return (NULL);
 	}
 	table->num_of_buckets = num_of_buckets;
 	return (table);
@@ -42,7 +43,11 @@ int	insert_to_hash_table(t_hash_table *table, int value)
 	t_hash_node	*current;
 	t_hash_node	*new_node;
 
+	if (!table || !table->buckets)
+		return (0);
 	index = hash_function(value, table->num_of_buckets);
+	if (index < 0 || index >= table->num_of_buckets)
+		return (0);
 	current = table->buckets[index];
 	while (current)
 	{
@@ -51,22 +56,26 @@ int	insert_to_hash_table(t_hash_table *table, int value)
 		current = current->next;
 	}
 	new_node = malloc(sizeof(t_hash_node));
+	if (!new_node)
+		return (0);
 	new_node->value = value;
 	new_node->next = table->buckets[index];
 	table->buckets[index] = new_node;
 	return (1);
 }
 
-void	free_hash_table(t_hash_table *table)
+void	free_hash_table(t_hash_table **table)
 {
 	int			i;
 	t_hash_node	*current;
 	t_hash_node	*temp;
 
+	if (!table || !*table)
+		return ;
 	i = 0;
-	while (i < table->num_of_buckets)
+	while (i < (*table)->num_of_buckets)
 	{
-		current = table->buckets[i];
+		current = (*table)->buckets[i];
 		while (current)
 		{
 			temp = current;
@@ -75,6 +84,7 @@ void	free_hash_table(t_hash_table *table)
 		}
 		i++;
 	}
-	free(table->buckets);
-	free(table);
+	free((*table)->buckets);
+	free(*table);
+	*table = NULL;
 }

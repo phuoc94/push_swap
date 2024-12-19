@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 17:19:41 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/18 21:39:53 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/12/19 16:02:41 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ void	check_duplicates(t_stack *stack, t_stack *stack2)
 		if (!insert_to_hash_table(hash_table, current->data))
 		{
 			print_error();
-			free_hash_table(hash_table);
+			free_hash_table(&hash_table);
 			free_error(&stack, &stack2);
 			exit(EXIT_FAILURE);
 		}
 		current = current->next;
 	}
-	free_hash_table(hash_table);
+	free_hash_table(&hash_table);
 }

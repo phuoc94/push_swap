@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 18:49:01 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/13 19:03:41 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/12/19 16:02:23 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@ typedef struct s_hash_table
 
 t_hash_table	*create_hash_table(int num_of_buckets);
 int				insert_to_hash_table(t_hash_table *table, int value);
-void			free_hash_table(t_hash_table *table);
+void			free_hash_table(t_hash_table **table);
 
 #endif
