@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 16:21:27 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/19 15:13:12 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/12/19 15:31:52 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,9 @@ void	parse_single_arg(char *arg, t_stack *stack, t_stack *stack2)
 	i--;
 	while (i >= 0)
 	{
-		is_num = is_number(argv2[i]);
+		is_num = ft_isnumber(argv2[i]);
 		res = ft_strtol(argv2[i], &endptr, 10);
-		if (endptr == argv2[i] || res > INT_MAX || res < INT_MIN || !is_num)
+		if (endptr == argv2[i] || !ft_isint(res) || !is_num)
 		{
 			print_error();
 			free_ft_split(argv2);
@@ -75,9 +75,9 @@ void	parse_multiple_args(int argc, char *argv[], t_stack *stack,
 
 	while (--argc > 0)
 	{
-		is_num = is_number(argv[argc]);
+		is_num = ft_isnumber(argv[argc]);
 		res = ft_strtol(argv[argc], &endptr, 10);
-		if (endptr == argv[argc] || res > INT_MAX || res < INT_MIN || !is_num)
+		if (endptr == argv[argc] || !ft_isint(res) || !is_num)
 		{
 			print_error();
 			free_error(&stack, &stack2);
