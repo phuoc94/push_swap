@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 18:52:48 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/19 16:21:48 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/12/19 18:21:11 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 
 int	hash_function(int value, int num_of_buckets)
 {
-	if (value < 0)
+	if (value == INT_MIN)
+		value = INT_MAX;
+	else if (value < 0)
 		value = -value;
 	return (value % num_of_buckets);
 }
