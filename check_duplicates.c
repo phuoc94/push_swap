@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 17:19:41 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/19 16:02:41 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/12/19 17:10:57 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,13 @@ void	check_duplicates(t_stack *stack, t_stack *stack2)
 	t_frame			*current;
 
 	hash_table = create_hash_table(stack->size);
+	if (!hash_table)
+	{
+		print_error();
+		if (stack && stack2)
+			free_error(&stack, &stack2);
+		exit(EXIT_FAILURE);
+	}
 	current = stack->top;
 	while (current)
 	{
