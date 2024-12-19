@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 16:21:27 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/18 23:25:07 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/12/19 15:13:12 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ int is_number(char *s)
     return 1;
 }
 
-
 void	parse_single_arg(char *arg, t_stack *stack, t_stack *stack2)
 {
 	char	**argv2;
@@ -44,6 +43,7 @@ void	parse_single_arg(char *arg, t_stack *stack, t_stack *stack2)
 		i++;
 	if(i == 0)
 	{
+		print_error();
 		free_error(&stack, &stack2);
 		free_ft_split(argv2);
 		exit(EXIT_FAILURE);
@@ -71,11 +71,13 @@ void	parse_multiple_args(int argc, char *argv[], t_stack *stack,
 {
 	char	*endptr;
 	long	res;
+	int		is_num;
 
 	while (--argc > 0)
 	{
+		is_num = is_number(argv[argc]);
 		res = ft_strtol(argv[argc], &endptr, 10);
-		if (endptr == argv[argc] || res > INT_MAX || res < INT_MIN)
+		if (endptr == argv[argc] || res > INT_MAX || res < INT_MIN || !is_num)
 		{
 			print_error();
 			free_error(&stack, &stack2);
