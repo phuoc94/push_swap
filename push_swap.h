@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 16:47:12 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/18 21:44:12 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/12/19 22:31:53 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,5 @@ t_frame				*find_target_node(t_stack *target_stack,
 t_frame				*find_smallest(t_stack *stack);
 void				set_current_position(t_stack *stack);
 void				push_cheapest(t_stack *a, t_stack *b);
-
-void				print_node_data(t_frame *node);
 
 #endif
