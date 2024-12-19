@@ -6,25 +6,26 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/19 15:16:03 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/19 15:28:14 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/12/19 19:58:45 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isnumber(char *s)
+int	ft_isnumber(char *s)
 {
-    int i = 0;
+	int	i;
 
-    if (s[i] == '-' || s[i] == '+')
-        i++;
-    if (s[i] == '\0')
-        return 0;
-    while (s[i] != '\0')
-    {
-        if (!ft_isdigit(s[i]))
-            return 0;
-        i++;
-    }
-    return 1;
+	i = 0;
+	if (s[i] == '-' || s[i] == '+')
+		i++;
+	if (s[i] == '\0')
+		return (0);
+	while (s[i] != '\0')
+	{
+		if (!ft_isdigit(s[i]))
+			return (0);
+		i++;
+	}
+	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 18:47:30 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/18 23:07:52 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/12/19 19:58:52 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ void	push_swap(t_stack *a, t_stack *b)
 	int		lis_length;
 	t_frame	*smallest;
 
-	if(is_stack_sorted(a))
-		return;
+	if (is_stack_sorted(a))
+		return ;
 	lis = get_lis(a, &lis_length);
 	move_non_lis_to_b(a, b, lis, lis_length);
 	free(lis);

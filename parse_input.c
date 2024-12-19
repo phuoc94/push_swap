@@ -6,42 +6,57 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 16:21:27 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/19 15:31:52 by phuocngu         ###   ########.fr       */
+/*   Updated: 2024/12/19 20:00:46 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int is_number(char *s)
+int	is_number(char *s)
 {
-    int i = 0;
+	int	i;
 
-    if (s[i] == '-' || s[i] == '+')
-        i++;
-    if (s[i] == '\0')
-        return 0;
-    while (s[i] != '\0')
-    {
-        if (!ft_isdigit(s[i]))
-            return 0;
-        i++;
-    }
-    return 1;
+	i = 0;
+	if (s[i] == '-' || s[i] == '+')
+		i++;
+	if (s[i] == '\0')
+		return (0);
+	while (s[i] != '\0')
+	{
+		if (!ft_isdigit(s[i]))
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
+void	validate_and_push(char *arg, t_stack *stack, t_stack *stack2)
+{
+	char	*endptr;
+	long	res;
+	int		is_num;
+
+	is_num = ft_isnumber(arg);
+	res = ft_strtol(arg, &endptr, 10);
+	if (endptr == arg || !ft_isint(res) || !is_num)
+	{
+		print_error();
+		free_error(&stack, &stack2);
+		exit(EXIT_FAILURE);
+	}
+	push(stack, (int)res);
 }
 
 void	parse_single_arg(char *arg, t_stack *stack, t_stack *stack2)
 {
 	char	**argv2;
-	char	*endptr;
-	long	res;
 	int		i;
-	int		is_num;
 
 	argv2 = ft_split(arg, ' ');
 	i = 0;
 	while (argv2[i])
 		i++;
-	if(i == 0)
+	if (i == 0)
 	{
 		print_error();
 		free_error(&stack, &stack2);
@@ -51,16 +66,7 @@ void	parse_single_arg(char *arg, t_stack *stack, t_stack *stack2)
 	i--;
 	while (i >= 0)
 	{
-		is_num = ft_isnumber(argv2[i]);
-		res = ft_strtol(argv2[i], &endptr, 10);
-		if (endptr == argv2[i] || !ft_isint(res) || !is_num)
-		{
-			print_error();
-			free_ft_split(argv2);
-			free_error(&stack, &stack2);
-			exit(EXIT_FAILURE);
-		}
-		push(stack, (int)res);
+		validate_and_push(argv2[i], stack, stack2);
 		i--;
 	}
 	free_ft_split(argv2);
