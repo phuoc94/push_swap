@@ -6,7 +6,7 @@
 #    By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/02 18:26:02 by phuocngu          #+#    #+#              #
-#    Updated: 2024/12/17 21:06:06 by phuocngu         ###   ########.fr        #
+#    Updated: 2024/12/19 20:41:57 by phuocngu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,6 @@ SRC_FILES = $(SRC_DIR)/main.c \
             $(OP_DIR)/swap_operations.c \
             $(HT_DIR)/hash_table.c \
             $(LIS_DIR)/lis_helpper.c \
-            $(LIS_DIR)/lis.c
 
 OBJS = $(SRC_FILES:.c=.o)
 
