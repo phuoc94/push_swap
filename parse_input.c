@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 16:21:27 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/19 20:00:46 by phuocngu         ###   ########.fr       */
+/*   Updated: 2025/01/02 18:45:10 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	is_number(char *s)
 	return (1);
 }
 
-void	validate_and_push(char *arg, t_stack *stack, t_stack *stack2)
+void	validate_and_push(char *arg, t_stack *stack, t_stack *stack2, char **argv2)
 {
 	char	*endptr;
 	long	res;
@@ -42,6 +42,7 @@ void	validate_and_push(char *arg, t_stack *stack, t_stack *stack2)
 	{
 		print_error();
 		free_error(&stack, &stack2);
+		free_ft_split(argv2);
 		exit(EXIT_FAILURE);
 	}
 	push(stack, (int)res);
@@ -66,7 +67,7 @@ void	parse_single_arg(char *arg, t_stack *stack, t_stack *stack2)
 	i--;
 	while (i >= 0)
 	{
-		validate_and_push(argv2[i], stack, stack2);
+		validate_and_push(argv2[i], stack, stack2, argv2);
 		i--;
 	}
 	free_ft_split(argv2);
