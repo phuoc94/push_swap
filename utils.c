@@ -6,12 +6,11 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 22:18:32 by phuocngu          #+#    #+#             */
-/*   Updated: 2024/12/12 16:45:12 by phuocngu         ###   ########.fr       */
+/*   Updated: 2025/01/02 12:22:06 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 void	print_stack_line(t_frame *x, t_frame *y)
 {
